@@ -23,7 +23,7 @@ massa_addr = "2oNMsFA82Jqb8Bktoc9rVtQMcdmgB8w3tRGUWdZkyWJdTETSnD"
 # Run script
 1. Run wia systemd
 ```
-sudo tee <<EOF >/dev/null /etc/systemd/system/massa.service
+sudo tee <<EOF >/dev/null /etc/systemd/system/checkmassa.service
 [Unit]
 Description=Check massa rolls
 After=network-online.target
@@ -36,9 +36,9 @@ ExecStart=$(which python3) $HOME/massa.py
 WantedBy=multi-user.target
 EOF
 
-udo systemctl enable massa
+udo systemctl enable checkmassa
 sudo systemctl daemon-reload
-sudo systemctl restart massa
+sudo systemctl restart checkmassa
 ```
 2. Run wia tmux
 install tmux
