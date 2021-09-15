@@ -5,7 +5,7 @@ import time
 
 telegram_chat = "****"
 bot_token = "*****"
-send_text =  f"active_rolls = 0 check your massa node"
+send_text =  "********"
 massa_addr = "****"
 send_url = f"https://api.telegram.org/bot{bot_token}/sendMessage?chat_id={telegram_chat}&text={send_text}"
 
