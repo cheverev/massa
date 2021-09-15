@@ -1,14 +1,11 @@
 import urllib
 import requests
 import json
-import socket
 import time
-
-host_ip = socket.gethostbyname(socket.getfqdn())
 
 telegram_chat = "****"
 bot_token = "*****"
-send_text =  f"active_rolls = 0 on {host_ip} hosts"
+send_text =  f"active_rolls = 0 check your massa node"
 massa_addr = "****"
 send_url = f"https://api.telegram.org/bot{bot_token}/sendMessage?chat_id={telegram_chat}&text={send_text}"
 
