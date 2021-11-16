@@ -4,10 +4,10 @@ import os
 import time
 
 address = "iPwUxhRdcZB16FksEv5K8Xe2LFTWDMtAYwdjQZLMCEAWEvbCr"
-res = requests.post("http://127.0.0.1:33035/", json=request("get_addresses",params=[[address]]))
-massa = int(float(res.json().get("result")[0].get("balance").get("final_balance")))
 
 while True:
+    res = requests.post("http://127.0.0.1:33035/", json=request("get_addresses",params=[[address]]))
+    massa = int(float(res.json().get("result")[0].get("balance").get("final_balance")))
     if(massa // 100 > 0 ):
         os.system("date >> /root/massa.log")
         count = massa // 100
