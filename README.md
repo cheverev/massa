@@ -14,8 +14,7 @@ address = "iPwUxhRdcZB16FksEv5K8Xe2LFTWDMtAYwdjQZLMCEAWEvbCr"
 
 # Run script
 1. Run wia tmux
-install tmux
-- apt instlall tmux
+- apt install tmux
 - tmux new -s massa
 - $(which python3) $HOME/massa.py
 - Press ```Ctrl+b d``` do deatach tmux
