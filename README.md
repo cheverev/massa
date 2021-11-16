@@ -8,9 +8,9 @@ apt update && apt install python3 python3-pip -y && pip3 install requests jsonrp
 # Settings
 enter your address in massa.py 
 
-'''
+```
 address = "iPwUxhRdcZB16FksEv5K8Xe2LFTWDMtAYwdjQZLMCEAWEvbCr"
-'''
+```
 
 # Run script
 1. Run wia tmux
