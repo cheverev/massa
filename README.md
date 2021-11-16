@@ -1,9 +1,9 @@
 # massa
-Simple python script to check active rolls and send notification in telegram when activ rolls are 0
+Simple python script to check final balance and byt rolls
 
 # Install dependencies
 ```
-apt update && apt install python3 python3-pip -y && pip3 install requests
+apt update && apt install python3 python3-pip -y && pip3 install requests jsonrpcclient 
 ```
 # Settings
 first edit massa.py and enter your data
@@ -21,26 +21,7 @@ send_text =  "Activ rolls is 0 check your massa node"
 massa_addr = "2oNMsFA82Jqb8Bktoc9rVtQMcdmgB8w3tRGUWdZkyWJdTETSnD"
 ```
 # Run script
-1. Run wia systemd
-```
-sudo tee <<EOF >/dev/null /etc/systemd/system/checkmassa.service
-[Unit]
-Description=Check massa rolls
-After=network-online.target
-[Service]
-User=$USER
-Restart=always
-RestartSec=3
-ExecStart=$(which python3) $HOME/massa.py
-[Install]
-WantedBy=multi-user.target
-EOF
-
-udo systemctl enable checkmassa
-sudo systemctl daemon-reload
-sudo systemctl restart checkmassa
-```
-2. Run wia tmux
+1. Run wia tmux
 install tmux
 - apt instlall tmux
 - tmux new -s massa
