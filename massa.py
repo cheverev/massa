@@ -6,7 +6,7 @@ import time
 address = "iPwUxhRdcZB16FksEv5K8Xe2LFTWDMtAYwdjQZLMCEAWEvbCr"
 
 while True:
-    try:https://github.com/cheverev/massa/blob/main/massa.py
+    try:
         res = requests.post("http://127.0.0.1:33035/", json=request("get_addresses",params=[[address]]))
         ActiveRolls = int(res.json().get("result")[0].get("rolls").get("active_rolls"))
         CandidateRolls = int(res.json().get("result")[0].get("rolls").get("candidate_rolls"))
