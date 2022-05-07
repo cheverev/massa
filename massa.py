@@ -11,7 +11,7 @@ while True:
         ActiveRolls = int(res.json().get("result")[0].get("rolls").get("active_rolls"))
         CandidateRolls = int(res.json().get("result")[0].get("rolls").get("candidate_rolls"))
         if(ActiveRolls >= 1 or CandidateRolls == 1):
-            break
+            continue
         os.system("date >> /root/massa.log")
         os.system(f"cd /root/massa/massa-client && /root/massa/target/release/massa-client --wallet wallet.dat buy_rolls {address} 1 0 >> /root/massa.log")
         time.sleep(300)
