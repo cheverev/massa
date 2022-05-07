@@ -8,9 +8,9 @@ address = "iPwUxhRdcZB16FksEv5K8Xe2LFTWDMtAYwdjQZLMCEAWEvbCr"
 while True:
     try:
         res = requests.post("http://127.0.0.1:33035/", json=request("get_addresses",params=[[address]]))
-        massa =  int(float(res.json().get("result")[0].get("ledger_info").get("final_ledger_info").get("balance")))
-        ActiveRolls=int(res.json().get("result")[0].get("rolls").get("active_rolls"))
-        CandidateRolls=int(res.json().get("result")[0].get("rolls").get("candidate_rolls"))
+        massa = int(float(res.json().get("result")[0].get("ledger_info").get("final_ledger_info").get("balance")))
+        ActiveRolls = int(res.json().get("result")[0].get("rolls").get("active_rolls"))
+        CandidateRolls = int(res.json().get("result")[0].get("rolls").get("candidate_rolls"))
         if(ActiveRolls >= 1 or CandidateRolls == 1):
             break
         if(massa // 100 > 0 ):
